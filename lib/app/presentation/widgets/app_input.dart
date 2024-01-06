@@ -21,6 +21,7 @@ class AppInput extends StatefulWidget {
   final Widget? suffixIcon;
   final AutovalidateMode? autovalidateMode;
   final EdgeInsets? padding;
+  final String? hint;
 
   const AppInput({
     super.key,
@@ -41,6 +42,7 @@ class AppInput extends StatefulWidget {
     this.readOnly = false,
     this.autovalidateMode,
     this.padding,
+    this.hint,
   });
 
   @override
@@ -170,7 +172,7 @@ class _AppInputState extends State<AppInput> {
               ),
             ),
             SizedBox(
-              height: state.errorText != null ? 4.h : 0,
+              height: state.errorText != null || widget.hint != null ? 4.h : 0,
             ),
             state.errorText != null
                 ? Text(
@@ -179,7 +181,14 @@ class _AppInputState extends State<AppInput> {
                       color: Colors.red[400],
                     ),
                   )
-                : Container(),
+                : widget.hint != null
+                    ? Text(
+                        widget.hint!,
+                        style: body5TextStyle(
+                          color: ColorConstants.slate[600],
+                        ),
+                      )
+                    : Container(),
           ],
         );
       },
