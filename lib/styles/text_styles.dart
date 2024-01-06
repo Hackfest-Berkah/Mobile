@@ -52,7 +52,7 @@ TextStyle h1BTextStyle({
   return TextStyle(
     fontSize: size ?? 24.sp,
     color: color ?? ColorConstants.slate[900],
-    fontWeight: weight ?? FontWeight.w400,
+    fontWeight: weight ?? FontWeight.bold,
     fontFamily: fontFamily ?? 'Kumbh',
     letterSpacing: letterSpacing,
     fontStyle: fontStyle,

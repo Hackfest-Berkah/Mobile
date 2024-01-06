@@ -43,10 +43,23 @@ class ColorConstants {
   };
 
   static Map<int, Gradient> gradient = {
-    1: RadialGradient(
-      colors: [Color(0xFF34C759), Color(0xFF2A9134)],
-      center: Alignment(1.0, 0.0),
-      radius: 1.1225,
+    1: LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+      colors: [
+        ColorConstants.primary[500]!,
+        ColorConstants.primary[900]!,
+      ],
+    ),
+    2: LinearGradient(
+      colors: [
+        ColorConstants.primary[500]!,
+        ColorConstants.primary[900]!,
+      ],
+      begin: Alignment.topLeft,
+      end: Alignment.bottomRight,
+      transform: GradientRotation(18 * (3.1415926535 / 180)),
+      stops: [0.2658, 1.0],
     ),
   };
 
