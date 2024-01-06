@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:mobile/app/bindings/global_bindings.dart';
-import 'package:mobile/routes/app_page.dart';
-import 'package:mobile/routes/app_route.dart';
-import 'package:mobile/utils/app_token.dart';
-import 'package:mobile/utils/global_theme.dart';
+import 'package:kiri/app/bindings/global_bindings.dart';
+import 'package:kiri/routes/app_page.dart';
+import 'package:kiri/routes/app_route.dart';
+import 'package:kiri/utils/app_token.dart';
+import 'package:kiri/utils/global_theme.dart';
 
 void main() {
   runApp(const MainApp());
@@ -30,7 +30,7 @@ class MainApp extends StatelessWidget {
               if (snapshot.hasData) {
                 return GetMaterialApp(
                   initialBinding: GlobalBinding(),
-                  title: 'Transpo',
+                  title: 'Kiri',
                   theme: globalTheme(),
                   getPages: appPage(),
                   initialRoute:

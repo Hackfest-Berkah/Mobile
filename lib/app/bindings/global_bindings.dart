@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:mobile/app/controller/cache_controller.dart';
-import 'package:mobile/app/controller/global_controller.dart';
+import 'package:kiri/app/controller/cache_controller.dart';
+import 'package:kiri/app/controller/global_controller.dart';
 
 class GlobalBinding implements Bindings {
   @override
