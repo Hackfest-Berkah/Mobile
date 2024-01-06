@@ -59,7 +59,7 @@ class BottomNavigator extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  // TOOD: REDIRECT INTO REGISTER PAGE
+                  Get.toNamed(AppRoute.register);
                 },
                 child: Text(
                   "Create Account",
