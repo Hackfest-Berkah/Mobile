@@ -15,5 +15,16 @@ class AppRoute {
   static String home = "/home";
 
   static String offers = "/offers";
+
+  // QR
   static String qr = "/qr";
+
+  // Kiri Pay
+  static String kiriPay = "/kiri-pay";
+
+  // History
+  static String history = "/history";
+
+  // Profile
+  static String profile = "/profile";
 }
