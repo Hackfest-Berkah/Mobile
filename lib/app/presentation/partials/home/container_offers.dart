@@ -51,12 +51,12 @@ class ContainerOffer extends StatelessWidget {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(14.w),
                             ),
-                            width: 300.w,
+                            width: 280.w,
                             clipBehavior: Clip.antiAlias,
                             height: 160.h,
                             child: Image.asset(
                               "assets/images/voucher_$e.png",
-                              width: 300.w,
+                              width: 280.w,
                               height: 160.h,
                               fit: BoxFit.cover,
                             ),
