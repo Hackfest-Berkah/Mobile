@@ -90,6 +90,7 @@ class AppButton extends StatelessWidget {
               ),
           shadowColor: Colors.transparent,
           elevation: 0,
+          visualDensity: padding != null ? VisualDensity.compact : null,
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         ),
         child: Text(

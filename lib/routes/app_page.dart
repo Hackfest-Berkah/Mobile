@@ -4,6 +4,7 @@ import 'package:kiri/app/bindings/home_bindings.dart';
 import 'package:kiri/app/bindings/onboard_bindings.dart';
 import 'package:kiri/app/presentation/view/home_page.dart';
 import 'package:kiri/app/presentation/view/login_page.dart';
+import 'package:kiri/app/presentation/view/offers_page.dart';
 import 'package:kiri/app/presentation/view/onboard_page.dart';
 import 'package:kiri/app/presentation/view/register_page.dart';
 import 'package:kiri/app/presentation/view/splash_page.dart';
@@ -38,6 +39,11 @@ List<GetPage<dynamic>> appPage() {
       page: () => RegisterPage(),
       binding: AuthBinding(),
       transition: Transition.rightToLeftWithFade,
+    ),
+    GetPage(
+      name: AppRoute.offers,
+      page: () => OffersPage(),
+      transition: Transition.downToUp,
     ),
   ];
 }
