@@ -16,6 +16,7 @@ class HomeHeader extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
+                SizedBox(height: 12.h),
                 Text(
                   "Selamat Pagi,",
                   style: body2BTextStyle(

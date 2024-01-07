@@ -15,4 +15,5 @@ class AppRoute {
   static String home = "/home";
 
   static String offers = "/offers";
+  static String qr = "/qr";
 }

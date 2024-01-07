@@ -95,8 +95,12 @@ class AppBottomBar extends StatelessWidget {
                       Text(
                         "Scan QR",
                         style: body5TextStyle(
-                          weight: FontWeight.w500,
-                          color: ColorConstants.slate[400],
+                          weight: route == AppRoute.qr
+                              ? FontWeight.bold
+                              : FontWeight.w500,
+                          color: route == AppRoute.qr
+                              ? ColorConstants.primary[500]
+                              : ColorConstants.slate[400],
                         ),
                       ),
                     ],
@@ -156,7 +160,13 @@ class AppBottomBar extends StatelessWidget {
                   borderRadius: BorderRadius.circular(65.w),
                 ),
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    if (Get.previousRoute == AppRoute.qr) {
+                      Get.back();
+                    } else {
+                      Get.toNamed(AppRoute.qr);
+                    }
+                  },
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40.w),
                   ),

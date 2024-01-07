@@ -6,6 +6,7 @@ import 'package:kiri/app/presentation/view/home_page.dart';
 import 'package:kiri/app/presentation/view/login_page.dart';
 import 'package:kiri/app/presentation/view/offers_page.dart';
 import 'package:kiri/app/presentation/view/onboard_page.dart';
+import 'package:kiri/app/presentation/view/qr_page.dart';
 import 'package:kiri/app/presentation/view/register_page.dart';
 import 'package:kiri/app/presentation/view/splash_page.dart';
 import 'package:kiri/routes/app_route.dart';
@@ -45,5 +46,10 @@ List<GetPage<dynamic>> appPage() {
       page: () => OffersPage(),
       transition: Transition.downToUp,
     ),
+    GetPage(
+      name: AppRoute.qr,
+      page: () => QrPage(),
+      transition: Transition.downToUp,
+    )
   ];
 }
