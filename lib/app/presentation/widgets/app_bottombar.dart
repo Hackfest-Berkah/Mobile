@@ -151,12 +151,12 @@ class AppBottomBar extends StatelessWidget {
                 width: 65.w,
                 height: 65.h,
                 decoration: BoxDecoration(
-                  gradient: ColorConstants.gradient[3],
+                  color: Colors.white,
+                  gradient: ColorConstants.gradient[1],
                   borderRadius: BorderRadius.circular(65.w),
                 ),
                 child: MaterialButton(
                   onPressed: () {},
-                  color: Colors.transparent,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40.w),
                   ),
