@@ -52,14 +52,21 @@ class ColorConstants {
       ],
     ),
     2: LinearGradient(
+      begin: Alignment(1.7, -1.0),
+      end: Alignment(1.0, 1.0),
+      colors: [
+        ColorConstants.primary[900]!,
+        ColorConstants.primary[700]!,
+        ColorConstants.primary[500]!,
+      ],
+    ),
+    3: LinearGradient(
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
       colors: [
         ColorConstants.primary[500]!,
-        ColorConstants.primary[900]!,
+        ColorConstants.primary[700]!,
       ],
-      begin: Alignment.topLeft,
-      end: Alignment.bottomRight,
-      transform: GradientRotation(18 * (3.1415926535 / 180)),
-      stops: [0.2658, 1.0],
     ),
   };
 
@@ -71,6 +78,11 @@ class ColorConstants {
     ),
     2: BoxShadow(
       color: Colors.black.withOpacity(.1),
+      offset: Offset(0, 4),
+      blurRadius: 40.sp,
+    ),
+    3: BoxShadow(
+      color: Colors.black.withOpacity(.3),
       offset: Offset(0, 4),
       blurRadius: 40.sp,
     ),
