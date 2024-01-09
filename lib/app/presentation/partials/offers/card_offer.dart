@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kiri/app/models/offer.dart';
+import 'package:kiri/app/models/common/offer.dart';
 import 'package:kiri/app/presentation/widgets/app_button.dart';
 import 'package:kiri/styles/color_constants.dart';
 import 'package:kiri/styles/text_styles.dart';

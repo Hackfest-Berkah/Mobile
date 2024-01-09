@@ -68,6 +68,14 @@ class ColorConstants {
         ColorConstants.primary[700]!,
       ],
     ),
+    4: LinearGradient(
+      begin: Alignment.bottomCenter,
+      end: Alignment.topCenter,
+      colors: [
+        ColorConstants.primary[500]!,
+        ColorConstants.primary[900]!,
+      ],
+    ),
   };
 
   static Map<int, BoxShadow> shadow = {
@@ -87,7 +95,7 @@ class ColorConstants {
       blurRadius: 40.sp,
     ),
   };
-  static Color error = Color(0xffFF405F);
+  static Color error = Color(0xffFF4A4A);
 }
 
 final ColorScheme appColorScheme = ColorScheme(

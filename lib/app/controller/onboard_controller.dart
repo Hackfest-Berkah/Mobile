@@ -1,6 +1,6 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:kiri/app/models/onboard.dart';
+import 'package:kiri/app/models/common/onboard.dart';
 
 class OnboardController extends GetxController {
   static OnboardController get i => Get.find<OnboardController>();

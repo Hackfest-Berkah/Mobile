@@ -137,7 +137,9 @@ class AppBottomBar extends StatelessWidget {
                     ),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Get.toNamed(AppRoute.profile);
+                    },
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -152,7 +154,9 @@ class AppBottomBar extends StatelessWidget {
                         Text(
                           "Profile",
                           style: body6BTextStyle(
-                            color: ColorConstants.slate[400],
+                            color: route == AppRoute.profile
+                                ? ColorConstants.primary[500]
+                                : ColorConstants.slate[400],
                           ),
                         ),
                       ],

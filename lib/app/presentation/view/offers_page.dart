@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:kiri/app/models/offer.dart';
+import 'package:kiri/app/models/common/offer.dart';
 import 'package:kiri/app/presentation/partials/offers/card_offer.dart';
 import 'package:kiri/app/presentation/widgets/app_header.dart';
 import 'package:kiri/extensions/map_indexed.dart';

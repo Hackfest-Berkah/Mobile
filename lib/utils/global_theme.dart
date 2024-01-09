@@ -4,7 +4,7 @@ import 'package:kiri/styles/color_constants.dart';
 ThemeData globalTheme() {
   return ThemeData(
     fontFamily: "Kumbh",
-    scaffoldBackgroundColor: ColorConstants.slate[25],
+    scaffoldBackgroundColor: ColorConstants.slate[50],
     colorScheme: appColorScheme,
   );
 }
