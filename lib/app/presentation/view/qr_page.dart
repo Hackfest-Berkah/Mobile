@@ -41,7 +41,15 @@ class QrPage extends StatelessWidget {
                   style: body1BTextStyle(color: Colors.white),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(height: 52.h),
+                SizedBox(height: 8.h),
+                Text(
+                  "This QR code must be used as tap-in (ride fleet)\nand tap-out (drop-off fleet)",
+                  style: body3TextStyle(
+                    color: Colors.white,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 40.h),
                 Container(
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -54,7 +62,7 @@ class QrPage extends StatelessWidget {
                     fit: BoxFit.fill,
                   ),
                 ),
-                SizedBox(height: 52.h),
+                SizedBox(height: 40.h),
                 Text(
                   "This QR code must be used as tap-in (ride fleet)\nand tap-out (drop-off fleet)",
                   style: body3BTextStyle(
