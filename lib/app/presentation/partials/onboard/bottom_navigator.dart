@@ -32,7 +32,7 @@ class BottomNavigator extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25.w),
                         color: ColorConstants
-                            .primary[e == controller.current.value ? 200 : 400],
+                            .primary[e != controller.current.value ? 200 : 400],
                       ),
                       height: 11.w,
                     ),
