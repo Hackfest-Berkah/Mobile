@@ -8,6 +8,7 @@ import 'package:kiri/app/presentation/partials/profile/profile_card_wrapper.dart
 import 'package:kiri/app/presentation/partials/profile/profile_scaffold.dart';
 import 'package:kiri/app/presentation/widgets/app_button.dart';
 import 'package:kiri/routes/app_route.dart';
+import 'package:kiri/services/api/fetch_data.dart';
 import 'package:kiri/styles/text_styles.dart';
 
 class ProfilePage extends GetView<ProfileController> {
@@ -104,7 +105,9 @@ class ProfilePage extends GetView<ProfileController> {
           ),
           SizedBox(height: 16.h),
           AppButton(
-            onPressed: () {},
+            onPressed: () {
+              logoutHandler();
+            },
             text: "Logout",
             variant: AppButtonVariant.secondary,
             textStyle: body3BTextStyle(color: Colors.white),
