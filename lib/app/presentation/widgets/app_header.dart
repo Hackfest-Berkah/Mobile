@@ -35,7 +35,7 @@ class AppHeader extends StatelessWidget implements PreferredSizeWidget {
                 ? Align(
                     alignment: Alignment.centerLeft,
                     child: IconButton(
-                      iconSize: 27.sp,
+                      iconSize: 22.sp,
                       onPressed: () {
                         Get.back();
                       },
