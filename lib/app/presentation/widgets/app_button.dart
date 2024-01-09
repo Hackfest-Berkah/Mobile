@@ -19,10 +19,11 @@ class AppButton extends StatelessWidget {
   final void Function()? onPressed;
   final String text;
   final AppButtonVariant variant;
+  final Widget? child;
   final EdgeInsets? padding;
   final BorderRadiusGeometry? borderRadius;
   final TextStyle? textStyle;
-  final Color? backgroundColor;
+  final Color? color;
   final Color? foregroundColor;
 
   const AppButton({
@@ -34,8 +35,9 @@ class AppButton extends StatelessWidget {
     this.padding,
     this.borderRadius,
     this.textStyle,
-    this.backgroundColor,
+    this.color,
     this.foregroundColor,
+    this.child,
   });
 
   @override
@@ -44,8 +46,8 @@ class AppButton extends StatelessWidget {
       return Container(
         decoration: BoxDecoration(
           border: Border.all(
-            color: ColorConstants.primary[500]!,
-            width: 1.5.w,
+            color: color ?? ColorConstants.primary[500]!,
+            width: 1.w,
           ),
           borderRadius: borderRadius ?? BorderRadius.circular(10.w),
         ),
@@ -68,13 +70,14 @@ class AppButton extends StatelessWidget {
             elevation: 0,
             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
           ),
-          child: Text(
-            text,
-            style: textStyle ??
-                h4BTextStyle(
-                  color: ColorConstants.primary[500],
-                ),
-          ),
+          child: child ??
+              Text(
+                text,
+                style: textStyle ??
+                    h4BTextStyle(
+                      color: ColorConstants.primary[500],
+                    ),
+              ),
         ),
       );
     }
@@ -82,7 +85,7 @@ class AppButton extends StatelessWidget {
     return AnimatedContainer(
       duration: Duration(milliseconds: 350),
       decoration: BoxDecoration(
-        color: backgroundColor ??
+        color: color ??
             (onPressed == null
                 ? ColorConstants.slate[300]
                 : variant == AppButtonVariant.primary
@@ -112,10 +115,11 @@ class AppButton extends StatelessWidget {
           visualDensity: padding != null ? VisualDensity.compact : null,
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
         ),
-        child: Text(
-          text,
-          style: textStyle ?? h4BTextStyle(color: Colors.white),
-        ),
+        child: child ??
+            Text(
+              text,
+              style: textStyle ?? h4BTextStyle(color: Colors.white),
+            ),
       ),
     );
   }

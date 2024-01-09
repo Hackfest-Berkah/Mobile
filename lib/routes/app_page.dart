@@ -1,11 +1,13 @@
 import 'package:get/get.dart';
 import 'package:kiri/app/bindings/auth_bindings.dart';
 import 'package:kiri/app/bindings/home_bindings.dart';
+import 'package:kiri/app/bindings/kiripay_bindings.dart';
 import 'package:kiri/app/bindings/onboard_bindings.dart';
 import 'package:kiri/app/bindings/profile_bindings.dart';
 import 'package:kiri/app/bindings/qr_bindings.dart';
 import 'package:kiri/app/presentation/view/edit_profile_page.dart';
 import 'package:kiri/app/presentation/view/home_page.dart';
+import 'package:kiri/app/presentation/view/kiripay_page.dart';
 import 'package:kiri/app/presentation/view/login_page.dart';
 import 'package:kiri/app/presentation/view/offers_page.dart';
 import 'package:kiri/app/presentation/view/onboard_page.dart';
@@ -67,6 +69,11 @@ List<GetPage<dynamic>> appPage() {
       page: () => EditProfilePage(),
       binding: ProfileBinding(),
       transition: Transition.rightToLeft,
-    )
+    ),
+    GetPage(
+      name: AppRoute.kiriPay,
+      page: () => KiripayPage(),
+      binding: KiripayBinding(),
+    ),
   ];
 }

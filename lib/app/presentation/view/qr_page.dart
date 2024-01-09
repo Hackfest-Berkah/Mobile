@@ -6,7 +6,7 @@ import 'package:kiri/app/controller/qr_controller.dart';
 import 'package:kiri/app/presentation/widgets/animation/fadein_left.dart';
 import 'package:kiri/app/presentation/widgets/app_bottombar.dart';
 import 'package:kiri/app/presentation/widgets/app_button.dart';
-import 'package:kiri/app/presentation/widgets/card_voucher.dart';
+import 'package:kiri/app/presentation/widgets/card_voucher_used.dart';
 import 'package:kiri/routes/app_route.dart';
 import 'package:kiri/styles/color_constants.dart';
 import 'package:kiri/styles/text_styles.dart';
@@ -84,7 +84,7 @@ class QrPage extends GetView<QrController> {
                     ),
                     Obx(
                       () => AppButton(
-                        backgroundColor: Colors.white,
+                        color: Colors.white,
                         foregroundColor: ColorConstants.primary[500],
                         onPressed: () {
                           controller.isUsed.value = true;
@@ -110,7 +110,7 @@ class QrPage extends GetView<QrController> {
                             SizedBox(height: 20.h),
                             FadeInFromLeft(
                               duration: Duration(milliseconds: 250),
-                              child: CardVoucher(),
+                              child: CardVoucherUsed(),
                             ),
                           ],
                         )

@@ -76,7 +76,7 @@ class AppBottomBar extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      // Get.toNamed(AppRoute.speakup);
+                      Get.toNamed(AppRoute.kiriPay);
                     },
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -84,6 +84,12 @@ class AppBottomBar extends StatelessWidget {
                         SvgPicture.asset(
                           "assets/logo/kiripay_nav.svg",
                           width: 37.w,
+                          colorFilter: ColorFilter.mode(
+                            route == AppRoute.kiriPay
+                                ? ColorConstants.primary[500]!
+                                : ColorConstants.slate[400]!,
+                            BlendMode.srcIn,
+                          ),
                         ),
                         SizedBox(height: 5.h),
                         Text(

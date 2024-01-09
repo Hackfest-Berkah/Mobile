@@ -112,6 +112,7 @@ class ProfilePage extends GetView<ProfileController> {
             variant: AppButtonVariant.secondary,
             textStyle: body3BTextStyle(color: Colors.white),
           ),
+          SizedBox(height: .12.sh),
         ],
       ),
     );

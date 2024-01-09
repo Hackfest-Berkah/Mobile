@@ -4,8 +4,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:kiri/styles/color_constants.dart';
 import 'package:kiri/styles/text_styles.dart';
 
-class CardVoucher extends StatelessWidget {
-  const CardVoucher({super.key});
+class CardVoucherUsed extends StatelessWidget {
+  const CardVoucherUsed({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +16,7 @@ class CardVoucher extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       child: IntrinsicHeight(
         child: Row(
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(

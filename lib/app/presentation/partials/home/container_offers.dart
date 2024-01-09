@@ -16,7 +16,7 @@ class ContainerOffer extends StatelessWidget {
           borderRadius: BorderRadius.circular(15.w),
           boxShadow: [ColorConstants.shadow[2]!],
         ),
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 15.h),
         child: Column(
           children: [
             Row(
