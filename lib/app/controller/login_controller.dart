@@ -4,6 +4,7 @@ import 'package:kiri/app/repository/auth_repo.dart';
 import 'package:kiri/routes/app_route.dart';
 import 'package:kiri/utils/app_token.dart';
 import 'package:kiri/utils/form_converter.dart';
+import 'package:kiri/utils/show_alert.dart';
 
 class LoginController extends GetxController {
   static LoginController get i => Get.find<LoginController>();
@@ -15,11 +16,15 @@ class LoginController extends GetxController {
   }.obs;
 
   void login() async {
-    if (formKey.currentState!.validate()) {
-      final data = formConverter(form);
-      final response = await AuthRepo.login(data);
-      UserToken.setToken(response.token);
-      Get.offAllNamed(AppRoute.home);
+    try {
+      if (formKey.currentState!.validate()) {
+        final data = formConverter(form);
+        final response = await AuthRepo.login(data);
+        UserToken.setToken(response.token);
+        Get.offAllNamed(AppRoute.home);
+      }
+    } catch (err) {
+      showAlert(err.toString());
     }
   }
 }

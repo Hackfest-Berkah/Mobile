@@ -164,7 +164,7 @@ class _AppInputState extends State<AppInput> {
                           ? Colors.red[400]
                           : ColorConstants.slate[900],
                       weight: FontWeight.w500,
-                      letterSpacing: widget.obscureText ? 2 : null,
+                      letterSpacing: widget.obscureText ? 2.5 : null,
                     ),
                     controller: widget.controller,
                   ),
@@ -273,6 +273,7 @@ class _AppInputState extends State<AppInput> {
         color: state.errorText != null
             ? ColorConstants.error
             : ColorConstants.slate[400],
+        letterSpacing: 0,
       ),
       suffixIcon: widget.obscureText
           ? GestureDetector(

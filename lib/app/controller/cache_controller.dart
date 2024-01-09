@@ -22,7 +22,9 @@ class CacheController extends GetxController {
     try {
       var data = await ProfileRepo.getProfile();
       user.value = data;
-    } catch (_) {}
+    } catch (e) {
+      showAlert(e.toString());
+    }
   }
 
   Future<Position> determinePosition() async {
