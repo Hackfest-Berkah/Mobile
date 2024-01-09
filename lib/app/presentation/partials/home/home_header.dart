@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:kiri/app/controller/cache_controller.dart';
 import 'package:kiri/styles/color_constants.dart';
 import 'package:kiri/styles/text_styles.dart';
+import 'package:kiri/utils/get_timeperiod.dart';
 
 class HomeHeader extends StatelessWidget {
-  const HomeHeader({super.key});
+  CacheController controller = CacheController.i;
+  HomeHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,19 +22,21 @@ class HomeHeader extends StatelessWidget {
               children: [
                 SizedBox(height: 12.h),
                 Text(
-                  "Selamat Pagi,",
+                  "Selamat ${getTimePeriod()},",
                   style: body2BTextStyle(
                     weight: FontWeight.bold,
                     color: ColorConstants.slate[25],
                   ),
                 ),
                 SizedBox(height: 4.h),
-                Text(
-                  "Purnomo",
-                  style: h1BTextStyle(
-                    weight: FontWeight.w600,
-                    color: ColorConstants.slate[100],
-                    height: 1,
+                Obx(
+                  () => Text(
+                    controller.user.value?.name ?? "......",
+                    style: h1BTextStyle(
+                      weight: FontWeight.w600,
+                      color: ColorConstants.slate[100],
+                      height: 1,
+                    ),
                   ),
                 ),
               ],

@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:kiri/app/controller/cache_controller.dart';
 import 'package:kiri/styles/color_constants.dart';
 import 'package:kiri/styles/text_styles.dart';
+import 'package:kiri/utils/currency_formatter.dart';
 
 class CardKiripay extends StatelessWidget {
-  const CardKiripay({super.key});
+  CacheController controller = CacheController.i;
+  CardKiripay({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -48,10 +52,13 @@ class CardKiripay extends StatelessWidget {
                         ),
                       ),
                       SizedBox(width: 4.w),
-                      Text(
-                        "100.000,00",
-                        style: h4BTextStyle(
-                          weight: FontWeight.w800,
+                      Obx(
+                        () => Text(
+                          currencyFormatter(
+                              controller.user.value?.kiriBalance ?? 0),
+                          style: h4BTextStyle(
+                            weight: FontWeight.w800,
+                          ),
                         ),
                       ),
                       Icon(
@@ -70,15 +77,17 @@ class CardKiripay extends StatelessWidget {
                         size: 16.w,
                       ),
                       SizedBox(width: 4.w),
-                      Text(
-                        "200",
-                        style: body4BTextStyle(),
+                      Obx(
+                        () => Text(
+                          controller.user.value?.kiriPoint.toString() ?? '0',
+                          style: body4BTextStyle(),
+                        ),
                       ),
                       SizedBox(width: 2.w),
                       Text(
                         "KiriPoints",
                         style: body4TextStyle(),
-                      )
+                      ),
                     ],
                   )
                 ],

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:kiri/app/controller/cache_controller.dart';
 import 'package:kiri/styles/color_constants.dart';
 import 'package:kiri/styles/text_styles.dart';
 
@@ -47,11 +49,13 @@ class CardLocation extends StatelessWidget {
           ),
           SizedBox(width: 16.w),
           Flexible(
-            child: Text(
-              "Jl. Cakalang Regency No.11, Pulowijen, Blimbing",
-              overflow: TextOverflow.ellipsis,
-              style: body4TextStyle(
-                color: ColorConstants.slate[800],
+            child: Obx(
+              () => Text(
+                CacheController.i.location.value,
+                overflow: TextOverflow.ellipsis,
+                style: body4TextStyle(
+                  color: ColorConstants.slate[800],
+                ),
               ),
             ),
           ),

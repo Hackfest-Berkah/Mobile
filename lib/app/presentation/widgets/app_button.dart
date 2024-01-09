@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kiri/styles/color_constants.dart';
 import 'package:kiri/styles/text_styles.dart';
+import 'package:kiri/utils/debouncer.dart';
 
 enum AppButtonType {
   contained,
@@ -45,7 +46,13 @@ class AppButton extends StatelessWidget {
           borderRadius: borderRadius ?? BorderRadius.circular(10.w),
         ),
         child: OutlinedButton(
-          onPressed: onPressed,
+          onPressed: onPressed != null
+              ? () {
+                  final debouncer =
+                      Debouncer(duration: Duration(milliseconds: 150));
+                  debouncer.run(onPressed!);
+                }
+              : null,
           style: OutlinedButton.styleFrom(
             backgroundColor: Colors.transparent,
             padding: padding ??
@@ -80,7 +87,13 @@ class AppButton extends StatelessWidget {
       ),
       clipBehavior: Clip.hardEdge,
       child: ElevatedButton(
-        onPressed: onPressed,
+        onPressed: onPressed != null
+            ? () {
+                final debouncer =
+                    Debouncer(duration: Duration(milliseconds: 150));
+                debouncer.run(onPressed!);
+              }
+            : null,
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.transparent,
           padding: padding ??

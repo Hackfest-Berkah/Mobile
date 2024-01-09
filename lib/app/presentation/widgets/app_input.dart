@@ -164,6 +164,7 @@ class _AppInputState extends State<AppInput> {
                           ? Colors.red[400]
                           : ColorConstants.slate[900],
                       weight: FontWeight.w500,
+                      letterSpacing: widget.obscureText ? 2 : null,
                     ),
                     controller: widget.controller,
                   ),
@@ -263,6 +264,7 @@ class _AppInputState extends State<AppInput> {
   InputDecoration _renderInputDecoration(FormFieldState<String> state) {
     return InputDecoration(
       prefixIcon: widget.prefixIcon,
+      prefixIconColor: state.errorText != null ? ColorConstants.error : null,
       prefixIconConstraints: BoxConstraints.tight(
         Size.square(40.w),
       ),
