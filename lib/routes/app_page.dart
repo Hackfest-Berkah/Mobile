@@ -3,6 +3,7 @@ import 'package:kiri/app/bindings/auth_bindings.dart';
 import 'package:kiri/app/bindings/home_bindings.dart';
 import 'package:kiri/app/bindings/onboard_bindings.dart';
 import 'package:kiri/app/bindings/profile_bindings.dart';
+import 'package:kiri/app/bindings/qr_bindings.dart';
 import 'package:kiri/app/presentation/view/edit_profile_page.dart';
 import 'package:kiri/app/presentation/view/home_page.dart';
 import 'package:kiri/app/presentation/view/login_page.dart';
@@ -53,6 +54,7 @@ List<GetPage<dynamic>> appPage() {
       name: AppRoute.qr,
       page: () => QrPage(),
       transition: Transition.downToUp,
+      binding: QrBinding(),
     ),
     GetPage(
       name: AppRoute.profile,

@@ -22,6 +22,8 @@ class AppButton extends StatelessWidget {
   final EdgeInsets? padding;
   final BorderRadiusGeometry? borderRadius;
   final TextStyle? textStyle;
+  final Color? backgroundColor;
+  final Color? foregroundColor;
 
   const AppButton({
     super.key,
@@ -32,6 +34,8 @@ class AppButton extends StatelessWidget {
     this.padding,
     this.borderRadius,
     this.textStyle,
+    this.backgroundColor,
+    this.foregroundColor,
   });
 
   @override
@@ -78,11 +82,12 @@ class AppButton extends StatelessWidget {
     return AnimatedContainer(
       duration: Duration(milliseconds: 350),
       decoration: BoxDecoration(
-        color: onPressed == null
-            ? ColorConstants.slate[300]
-            : variant == AppButtonVariant.primary
-                ? ColorConstants.primary[500]
-                : ColorConstants.error,
+        color: backgroundColor ??
+            (onPressed == null
+                ? ColorConstants.slate[300]
+                : variant == AppButtonVariant.primary
+                    ? ColorConstants.primary[500]
+                    : ColorConstants.error),
         borderRadius: borderRadius ?? BorderRadius.circular(10.w),
       ),
       clipBehavior: Clip.hardEdge,
@@ -95,6 +100,7 @@ class AppButton extends StatelessWidget {
               }
             : null,
         style: ElevatedButton.styleFrom(
+          foregroundColor: foregroundColor,
           backgroundColor: Colors.transparent,
           padding: padding ??
               EdgeInsets.symmetric(
