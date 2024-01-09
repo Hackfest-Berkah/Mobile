@@ -57,13 +57,19 @@ class AppBottomBar extends StatelessWidget {
                                   ColorConstants.primary[500]!,
                                   BlendMode.srcIn,
                                 )
-                              : null,
+                              : ColorFilter.mode(
+                                  ColorConstants.slate[400]!,
+                                  BlendMode.srcIn,
+                                ),
                         ),
                         SizedBox(height: 4.h),
                         Text(
                           "Home",
                           style: body6BTextStyle(
-                              color: ColorConstants.primary[500]),
+                            color: route == AppRoute.home
+                                ? ColorConstants.primary[500]
+                                : ColorConstants.slate[400],
+                          ),
                         ),
                       ],
                     ),
@@ -83,7 +89,10 @@ class AppBottomBar extends StatelessWidget {
                         Text(
                           "Payment",
                           style: body6BTextStyle(
-                              color: ColorConstants.primary[500]),
+                            color: route == AppRoute.kiriPay
+                                ? ColorConstants.primary[500]
+                                : ColorConstants.slate[400],
+                          ),
                         ),
                       ],
                     ),
@@ -112,6 +121,9 @@ class AppBottomBar extends StatelessWidget {
                         Icon(
                           Icons.history,
                           size: 30.h,
+                          color: route == AppRoute.history
+                              ? ColorConstants.primary[500]
+                              : ColorConstants.slate[400],
                         ),
                         SizedBox(height: 1.h),
                         Text(
@@ -119,6 +131,7 @@ class AppBottomBar extends StatelessWidget {
                           style: body6BTextStyle(
                             color: ColorConstants.slate[400],
                           ),
+                          textAlign: TextAlign.center,
                         ),
                       ],
                     ),
@@ -129,8 +142,11 @@ class AppBottomBar extends StatelessWidget {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(
-                          Icons.person,
+                          Icons.person_outline,
                           size: 30.h,
+                          color: route == AppRoute.profile
+                              ? ColorConstants.primary[500]
+                              : ColorConstants.slate[400],
                         ),
                         SizedBox(height: 3.h),
                         Text(
