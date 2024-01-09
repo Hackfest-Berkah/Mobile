@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:kiri/app/controller/cache_controller.dart';
 import 'package:kiri/app/presentation/widgets/app_button.dart';
 import 'package:kiri/styles/color_constants.dart';
 import 'package:kiri/styles/text_styles.dart';
@@ -60,14 +62,21 @@ class ProfileHeader extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        Text(
-                          "Jonathan Purnomo",
-                          style: h4BTextStyle(color: Colors.white),
+                        Obx(
+                          () => Text(
+                            CacheController.i.user.value?.name ?? "",
+                            style: h4BTextStyle(color: Colors.white),
+                          ),
                         ),
                         SizedBox(height: 8.h),
-                        Text(
-                          "081234567890",
-                          style: body3TextStyle(color: Colors.white),
+                        Obx(
+                          () => Text(
+                            CacheController.i.user.value?.phone != null &&
+                                    CacheController.i.user.value?.phone != ""
+                                ? CacheController.i.user.value!.phone
+                                : "Phone number not set",
+                            style: body3TextStyle(color: Colors.white),
+                          ),
                         ),
                       ],
                     ),
