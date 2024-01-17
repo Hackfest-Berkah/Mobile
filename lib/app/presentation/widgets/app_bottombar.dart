@@ -121,6 +121,9 @@ class AppBottomBar extends StatelessWidget {
                     ],
                   ),
                   GestureDetector(
+                    onTap: () {
+                      Get.toNamed(AppRoute.history);
+                    },
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [

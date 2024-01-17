@@ -1,3 +1,4 @@
+import 'package:kiri/app/models/response/history/history_model.dart';
 import 'package:kiri/app/models/response/login/login_response.dart';
 import 'package:kiri/app/models/response/profile/profile_response.dart';
 import 'package:kiri/app/models/response/register/register_response.dart';
@@ -12,6 +13,8 @@ abstract class ModelFactory {
       return ProfileResponse.fromJson(json);
     } else if (strType == (RegisterResponse).toString()) {
       return RegisterResponse.fromJson(json);
+    } else if (strType == (HistoryResponse).toString()) {
+      return HistoryResponse.fromJson(json);
     }
 
     throw UnimplementedError();

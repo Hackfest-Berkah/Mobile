@@ -34,7 +34,7 @@ class ApiResponse<T> extends BaseResponse {
       message: json["message"],
       success: json["success"],
       error: json["error"],
-      data: _Converter<T>().fromJson(json['data']),
+      data: Converter<T>().fromJson(json['data']),
     );
   }
 }
@@ -72,13 +72,13 @@ class ApiResponses<T> extends BaseResponse {
       success: json["success"],
       error: json["error"],
       data: List<T>.from((json["results"] ?? json["data"])
-          .map((x) => _Converter<T?>().fromJson(x))),
+          .map((x) => Converter<T?>().fromJson(x))),
     );
   }
 }
 
-class _Converter<T> implements JsonConverter<T?, Object?> {
-  const _Converter();
+class Converter<T> implements JsonConverter<T?, Object?> {
+  const Converter();
 
   @override
   T? fromJson(Object? json) {

@@ -268,6 +268,9 @@ class _AppInputState extends State<AppInput> {
       prefixIconConstraints: BoxConstraints.tight(
         Size.square(40.w),
       ),
+      suffixIconConstraints: BoxConstraints.tight(
+        Size.square(40.w),
+      ),
       hintStyle: body3TextStyle(
         weight: state.errorText != null ? FontWeight.w500 : FontWeight.normal,
         color: state.errorText != null
