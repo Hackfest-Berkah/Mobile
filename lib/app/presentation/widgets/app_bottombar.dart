@@ -138,7 +138,9 @@ class AppBottomBar extends StatelessWidget {
                         Text(
                           "History",
                           style: body6BTextStyle(
-                            color: ColorConstants.slate[400],
+                            color: route == AppRoute.history
+                                ? ColorConstants.primary[500]
+                                : ColorConstants.slate[400],
                           ),
                           textAlign: TextAlign.center,
                         ),

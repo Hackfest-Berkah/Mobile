@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -11,7 +12,11 @@ import 'package:kiri/utils/global_theme.dart';
 void main() async {
   await dotenv.load(fileName: '.env');
 
-  runApp(const MainApp());
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // runApp(const MainApp());
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((value) => runApp(MainApp()));
 }
 
 class MainApp extends StatelessWidget {

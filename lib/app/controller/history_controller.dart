@@ -11,7 +11,7 @@ class HistoryController extends GetxController {
     getData();
   }
 
-  RxnInt option = RxnInt();
+  RxInt option = 0.obs;
   RxList<HistoryResponse> data = <HistoryResponse>[].obs;
 
   void getData() async {
