@@ -35,22 +35,14 @@ class TopupPage extends GetView<TopupController> {
                   bottomLeft: Radius.circular(20.w),
                   bottomRight: Radius.circular(20.w),
                 ),
+                boxShadow: [ColorConstants.shadow[1]!],
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   AppInput(
                     controller: controller.inputController,
-                    onChange: (e) {
-                      if (e.isEmpty) {
-                        controller.nominal.value = 0;
-                        return;
-                      }
-                      int? res = int.tryParse(e);
-                      if (res != null) {
-                        controller.nominal.value = res;
-                      }
-                    },
+                    onChange: controller.parseNominal,
                     label: "Input Your Nominal",
                     prefixIcon: Center(
                       child: Row(
@@ -111,7 +103,9 @@ class TopupPage extends GetView<TopupController> {
                     SizedBox(height: 16.h),
                     Obx(
                       () => AppButton(
-                        onPressed: controller.nominal.value == 0 ? null : () {},
+                        onPressed: controller.nominal.value == 0
+                            ? null
+                            : controller.topupNext,
                         text: "Top Up",
                       ),
                     ),

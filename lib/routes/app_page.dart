@@ -18,6 +18,7 @@ import 'package:kiri/app/presentation/view/profile_page.dart';
 import 'package:kiri/app/presentation/view/qr_page.dart';
 import 'package:kiri/app/presentation/view/register_page.dart';
 import 'package:kiri/app/presentation/view/splash_page.dart';
+import 'package:kiri/app/presentation/view/topup_detail_page.dart';
 import 'package:kiri/app/presentation/view/topup_page.dart';
 import 'package:kiri/routes/app_route.dart';
 
@@ -89,6 +90,12 @@ List<GetPage<dynamic>> appPage() {
       page: () => TopupPage(),
       binding: TopupBinding(),
       transition: Transition.rightToLeftWithFade,
+    ),
+    GetPage(
+      name: AppRoute.topupDetail,
+      page: () => TopupDetailPage(),
+      binding: TopupBinding(),
+      transition: Transition.rightToLeft,
     ),
   ];
 }

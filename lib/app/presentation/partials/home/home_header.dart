@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:kiri/app/controller/cache_controller.dart';
+import 'package:kiri/app/controller/global_controller.dart';
 import 'package:kiri/styles/color_constants.dart';
 import 'package:kiri/styles/text_styles.dart';
 import 'package:kiri/utils/get_timeperiod.dart';
 
 class HomeHeader extends StatelessWidget {
-  CacheController controller = CacheController.i;
+  GlobalController controller = GlobalController.i;
   HomeHeader({super.key});
 
   @override

@@ -7,7 +7,7 @@ import 'package:kiri/styles/color_constants.dart';
 import 'package:kiri/styles/text_styles.dart';
 
 class CardTrack extends StatelessWidget {
-  static HomeController controller = HomeController.i;
+  HomeController controller = HomeController.i;
   static const CameraPosition initCoordinate = CameraPosition(
     target: LatLng(
       -7.9532062,
@@ -16,7 +16,7 @@ class CardTrack extends StatelessWidget {
     zoom: 14.5,
   );
 
-  const CardTrack({super.key});
+  CardTrack({super.key});
 
   @override
   Widget build(BuildContext context) {

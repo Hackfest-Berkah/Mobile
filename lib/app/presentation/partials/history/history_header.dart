@@ -6,8 +6,8 @@ import 'package:kiri/styles/color_constants.dart';
 import 'package:kiri/styles/text_styles.dart';
 
 class HistoryHeader extends StatelessWidget {
-  static HistoryController controller = HistoryController.i;
-  const HistoryHeader({super.key});
+  HistoryController controller = HistoryController.i;
+  HistoryHeader({super.key});
 
   @override
   Widget build(BuildContext context) {

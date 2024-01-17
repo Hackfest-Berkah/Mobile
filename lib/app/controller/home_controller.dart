@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:kiri/app/controller/cache_controller.dart';
+import 'package:kiri/app/controller/global_controller.dart';
 
 class HomeController extends GetxController {
   static HomeController get i => Get.find<HomeController>();
@@ -9,6 +9,6 @@ class HomeController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    CacheController.i.getUserData();
+    GlobalController.i.getUserData();
   }
 }

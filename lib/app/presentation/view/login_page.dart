@@ -42,6 +42,7 @@ class LoginPage extends GetView<LoginController> {
           ),
           SizedBox(height: 24.h),
           AppInput(
+            textInputAction: TextInputAction.next,
             controller: controller.form['email']!,
             label: "Email",
             placeholder: "ex: johndoe@gmail.com",

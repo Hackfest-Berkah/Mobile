@@ -20,7 +20,7 @@ class TopupGuide extends StatelessWidget {
           "Max. top up payment per transaction are Rp1.000.000.",
           "Max. accumulative balance per account are Rp10.000.000."
         ],
-        textStyle: body3TextStyle(color: ColorConstants.slate[300]),
+        textStyle: body3TextStyle(color: ColorConstants.slate[500]),
       ),
     );
   }
