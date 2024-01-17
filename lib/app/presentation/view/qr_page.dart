@@ -52,16 +52,24 @@ class QrPage extends GetView<QrController> {
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: 28.h),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.w),
-                  ),
-                  padding: EdgeInsets.all(12.w),
-                  child: Image.asset(
-                    "assets/images/qr.png",
-                    width: 240.w,
-                    fit: BoxFit.fill,
+                Obx(
+                  () => Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20.w),
+                    ),
+                    height: 264.h,
+                    width: 264.w,
+                    padding: EdgeInsets.all(12.w),
+                    child: controller.qr.value == null
+                        ? Center(
+                            child: CircularProgressIndicator(),
+                          )
+                        : Image.network(
+                            controller.qr.value!,
+                            width: 240.w,
+                            fit: BoxFit.fill,
+                          ),
                   ),
                 ),
                 SizedBox(height: 28.h),

@@ -58,6 +58,19 @@ class ProfilePage extends GetView<ProfileController> {
           ),
           SizedBox(height: 12.h),
           ProfileCardWrapper(
+            title: "Other Features",
+            data: [
+              ProfileSection(
+                icon: Icon(
+                  Icons.spatial_tracking,
+                  size: 22.w,
+                ),
+                text: "Track Users",
+              ),
+            ],
+          ),
+          SizedBox(height: 12.h),
+          ProfileCardWrapper(
             title: "KiriPay Settings",
             data: [
               ProfileSection(
