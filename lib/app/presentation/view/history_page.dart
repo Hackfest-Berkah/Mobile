@@ -11,15 +11,15 @@ class HistoryPage extends GetView<HistoryController> {
 
   @override
   Widget build(BuildContext context) {
-    return HistoryScaffold(
-      child: controller.data.isNotEmpty
-          ? Column(children: [
-              ...controller.data
-                  .map((data) => CardHistory(data: data))
-                  .toList(),
-              SizedBox(height: 100.h),
-            ])
-          : HistoryNone(),
-    );
+    return Obx(() => HistoryScaffold(
+          child: controller.data.isNotEmpty
+              ? Column(children: [
+                  ...controller.data
+                      .map((data) => CardHistory(data: data))
+                      .toList(),
+                  SizedBox(height: 100.h),
+                ])
+              : HistoryNone(),
+        ));
   }
 }

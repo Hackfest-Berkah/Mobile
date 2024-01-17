@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:kiri/app/controller/history_controller.dart';
 import 'package:kiri/styles/color_constants.dart';
 import 'package:kiri/styles/text_styles.dart';
@@ -40,42 +41,64 @@ class HistoryHeader extends StatelessWidget {
           SizedBox(height: 24.h),
           Row(
             children: [
-              MaterialButton(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 16.h),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.w),
-                ),
-                color: ColorConstants.slate[50],
-                elevation: 0,
-                highlightElevation: 0,
-                hoverColor: Colors.transparent,
-                visualDensity: VisualDensity.compact,
-                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                onPressed: () {},
-                child: Text(
-                  "KiriPay",
-                  style: body3TextStyle(
-                    color: ColorConstants.slate[600],
+              Obx(
+                () => MaterialButton(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 10.w, vertical: 16.h),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.w),
+                  ),
+                  color: controller.option.value == 1
+                      ? ColorConstants.primary[500]
+                      : ColorConstants.slate[50],
+                  elevation: 0,
+                  highlightElevation: 0,
+                  hoverColor: Colors.transparent,
+                  visualDensity: VisualDensity.compact,
+                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  onPressed: () {
+                    controller.option.value = 1;
+                  },
+                  child: Text(
+                    "KiriPay",
+                    style: body3TextStyle(
+                      weight:
+                          controller.option.value == 1 ? FontWeight.bold : null,
+                      color: controller.option.value == 1
+                          ? ColorConstants.slate[50]
+                          : ColorConstants.slate[600],
+                    ),
                   ),
                 ),
               ),
               SizedBox(width: 12.w),
-              MaterialButton(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 16.h),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.w),
-                ),
-                color: ColorConstants.slate[50],
-                elevation: 0,
-                highlightElevation: 0,
-                hoverColor: Colors.transparent,
-                visualDensity: VisualDensity.compact,
-                materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                onPressed: () {},
-                child: Text(
-                  "Fleet",
-                  style: body3TextStyle(
-                    color: ColorConstants.slate[600],
+              Obx(
+                () => MaterialButton(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 10.w, vertical: 16.h),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.w),
+                  ),
+                  color: controller.option.value == 2
+                      ? ColorConstants.primary[500]
+                      : ColorConstants.slate[50],
+                  elevation: 0,
+                  highlightElevation: 0,
+                  hoverColor: Colors.transparent,
+                  visualDensity: VisualDensity.compact,
+                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  onPressed: () {
+                    controller.option.value = 2;
+                  },
+                  child: Text(
+                    "Fleet",
+                    style: body3TextStyle(
+                      weight:
+                          controller.option.value == 2 ? FontWeight.bold : null,
+                      color: controller.option.value == 2
+                          ? ColorConstants.slate[50]
+                          : ColorConstants.slate[600],
+                    ),
                   ),
                 ),
               ),

@@ -43,7 +43,8 @@ Future<ApiResponse<T>> fetchData<T>({
       if (isAlert!) {
         if (response?.data is Map) {
           String message = response?.data['error'] ?? 'Unknown Errors Occurred';
-          if (message.toLowerCase().contains("signature")) {
+          if (message.toLowerCase().contains("signature") ||
+              message.toLowerCase().contains("token")) {
             logoutHandler();
           } else {
             showAlert(message);
@@ -100,7 +101,8 @@ Future<ApiResponses<T>> fetchMultipleData<T>({
       if (isAlert!) {
         if (response?.data is Map) {
           String message = response?.data['error'] ?? 'Unknown';
-          if (message.toLowerCase().contains("signature")) {
+          if (message.toLowerCase().contains("signature") ||
+              message.toLowerCase().contains("token")) {
             logoutHandler();
           } else {
             showAlert(message);

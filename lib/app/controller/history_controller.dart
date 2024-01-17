@@ -1,9 +1,6 @@
-import 'dart:convert' hide Converter;
-
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:kiri/app/models/response/history/history_model.dart';
-import 'package:kiri/services/api/source/api_response.dart';
+import 'package:kiri/app/repository/history_repo.dart';
 
 class HistoryController extends GetxController {
   static HistoryController get i => Get.find<HistoryController>();
@@ -18,12 +15,8 @@ class HistoryController extends GetxController {
   RxList<HistoryResponse> data = <HistoryResponse>[].obs;
 
   void getData() async {
-    final String response = await rootBundle.loadString(
-      'assets/data/history.json',
-    );
-    final map = json.decode(response);
-    final res = List<HistoryResponse>.from(
-        (map).map((x) => Converter<HistoryResponse?>().fromJson(x)));
-    data.value = res;
+    HistoryRepo.getData().then((value) {
+      data.value = value;
+    }).catchError((_) {});
   }
 }
