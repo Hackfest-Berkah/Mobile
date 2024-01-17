@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:kiri/app/controller/cache_controller.dart';
+import 'package:kiri/routes/app_route.dart';
 import 'package:kiri/styles/color_constants.dart';
 import 'package:kiri/styles/text_styles.dart';
 import 'package:kiri/utils/currency_formatter.dart';
@@ -102,7 +103,9 @@ class CardKiripay extends StatelessWidget {
               ),
               backgroundColor: ColorConstants.primary[600],
             ),
-            onPressed: () {},
+            onPressed: () {
+              Get.toNamed(AppRoute.topup);
+            },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

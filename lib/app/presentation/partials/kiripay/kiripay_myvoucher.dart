@@ -37,27 +37,16 @@ class KiripayMyvoucher extends StatelessWidget {
           IntrinsicHeight(
             child: SizedBox(
               height: 140.h,
-              child: ListView(
+              child: ListView.separated(
+                physics: BouncingScrollPhysics(),
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
-                children: [
-                  SizedBox(
-                    width: 250.w,
-                    child: MyVoucher(),
-                  ),
-                  SizedBox(
-                    width: 250.w,
-                    child: MyVoucher(),
-                  ),
-                  SizedBox(
-                    width: 250.w,
-                    child: MyVoucher(),
-                  ),
-                  SizedBox(
-                    width: 250.w,
-                    child: MyVoucher(),
-                  ),
-                ],
+                itemBuilder: (context, index) => SizedBox(
+                  width: 250.w,
+                  child: MyVoucher(),
+                ),
+                itemCount: 6,
+                separatorBuilder: (ctx, index) => SizedBox(width: 16.w),
               ),
             ),
           ),

@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:kiri/app/controller/cache_controller.dart';
 import 'package:kiri/app/presentation/widgets/app_button.dart';
+import 'package:kiri/routes/app_route.dart';
 import 'package:kiri/styles/color_constants.dart';
 import 'package:kiri/styles/text_styles.dart';
 import 'package:kiri/utils/currency_formatter.dart';
@@ -81,7 +82,9 @@ class KiripayBalance extends StatelessWidget {
         AppButton(
           padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 20.h),
           borderRadius: BorderRadius.circular(15.w),
-          onPressed: () {},
+          onPressed: () {
+            Get.toNamed(AppRoute.topup);
+          },
           text: "",
           child: Row(
             children: [

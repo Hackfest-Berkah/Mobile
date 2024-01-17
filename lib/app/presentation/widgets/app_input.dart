@@ -22,6 +22,10 @@ class AppInput extends StatefulWidget {
   final AutovalidateMode? autovalidateMode;
   final EdgeInsets? padding;
   final String? hint;
+  final Size? prefixConstraints;
+  final TextStyle? hintStyle;
+  final TextStyle? textStyle;
+  final double? gap;
 
   const AppInput({
     super.key,
@@ -43,6 +47,10 @@ class AppInput extends StatefulWidget {
     this.autovalidateMode,
     this.padding,
     this.hint,
+    this.prefixConstraints,
+    this.hintStyle,
+    this.textStyle,
+    this.gap,
   });
 
   @override
@@ -132,7 +140,9 @@ class _AppInputState extends State<AppInput> {
                     widget.label!,
                     style: body3BTextStyle(color: ColorConstants.slate[700]),
                   ),
-            widget.label == null ? Container() : SizedBox(height: 1.h),
+            widget.label == null
+                ? Container()
+                : SizedBox(height: widget.gap ?? 2.h),
             AnimatedContainer(
               duration: Duration(milliseconds: 250),
               curve: Curves.easeIn,
@@ -159,13 +169,14 @@ class _AppInputState extends State<AppInput> {
                     obscureText: isVisible,
                     keyboardType: widget.keyboardType,
                     decoration: _renderInputDecoration(state),
-                    style: body3TextStyle(
-                      color: state.errorText != null
-                          ? Colors.red[400]
-                          : ColorConstants.slate[900],
-                      weight: FontWeight.w500,
-                      letterSpacing: widget.obscureText ? 2.5 : null,
-                    ),
+                    style: widget.textStyle ??
+                        body3TextStyle(
+                          color: state.errorText != null
+                              ? Colors.red[400]
+                              : ColorConstants.slate[900],
+                          weight: FontWeight.w500,
+                          letterSpacing: widget.obscureText ? 2.5 : null,
+                        ),
                     controller: widget.controller,
                   ),
                   // _renderLabel(state),
@@ -264,20 +275,24 @@ class _AppInputState extends State<AppInput> {
   InputDecoration _renderInputDecoration(FormFieldState<String> state) {
     return InputDecoration(
       prefixIcon: widget.prefixIcon,
+      prefix: widget.prefix,
       prefixIconColor: state.errorText != null ? ColorConstants.error : null,
       prefixIconConstraints: BoxConstraints.tight(
-        Size.square(40.w),
+        widget.prefixConstraints ?? Size.square(40.w),
       ),
+      prefixStyle: body5TextStyle(),
       suffixIconConstraints: BoxConstraints.tight(
         Size.square(40.w),
       ),
-      hintStyle: body3TextStyle(
-        weight: state.errorText != null ? FontWeight.w500 : FontWeight.normal,
-        color: state.errorText != null
-            ? ColorConstants.error
-            : ColorConstants.slate[400],
-        letterSpacing: 0,
-      ),
+      hintStyle: widget.hintStyle ??
+          body3TextStyle(
+            weight:
+                state.errorText != null ? FontWeight.w500 : FontWeight.normal,
+            color: state.errorText != null
+                ? ColorConstants.error
+                : ColorConstants.slate[400],
+            letterSpacing: 0,
+          ),
       suffixIcon: widget.obscureText
           ? GestureDetector(
               onTap: () {

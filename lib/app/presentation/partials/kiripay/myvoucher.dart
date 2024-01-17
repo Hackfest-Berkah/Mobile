@@ -17,7 +17,6 @@ class MyVoucher extends StatelessWidget {
         ),
       ),
       clipBehavior: Clip.antiAlias,
-      margin: EdgeInsets.only(right: 20.w),
       child: IntrinsicHeight(
         child: Row(
           mainAxisSize: MainAxisSize.min,

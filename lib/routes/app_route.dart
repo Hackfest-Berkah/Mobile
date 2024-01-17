@@ -21,6 +21,7 @@ class AppRoute {
 
   // Kiri Pay
   static String kiriPay = "/kiri-pay";
+  static String topup = "/topup";
 
   // History
   static String history = "/history";
