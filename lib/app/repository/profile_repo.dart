@@ -16,4 +16,19 @@ class ProfileRepo {
       rethrow;
     }
   }
+
+  static Future editProfile(Map<String, String> data) async {
+    try {
+      var result = await fetchData(
+        url: "/api/v1/edit-profile",
+        data: data,
+        method: RequestMethod.POST,
+        isAlert: true,
+      );
+
+      return result.data!;
+    } catch (err) {
+      rethrow;
+    }
+  }
 }
