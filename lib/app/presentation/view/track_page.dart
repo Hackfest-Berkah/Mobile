@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:kiri/app/controller/track_controller.dart';
+import 'package:kiri/app/presentation/partials/track/card_fleet.dart';
 import 'package:kiri/app/presentation/partials/track/track_header.dart';
 import 'package:kiri/app/presentation/partials/track/track_wrapper.dart';
 
@@ -21,12 +22,36 @@ class TrackPage extends GetView<TrackController> {
       resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
-          GoogleMap(
-            myLocationEnabled: true,
-            initialCameraPosition: initCoordinate,
+          Obx(
+            () => GoogleMap(
+              onTap: (e) {
+                controller.focus.value = null;
+              },
+              onMapCreated: (ctr) {
+                controller.mapController.value = ctr;
+              },
+              myLocationEnabled: true,
+              initialCameraPosition: initCoordinate,
+              markers: {
+                ...controller.data
+                    .map(
+                      (e) => Marker(
+                        markerId: MarkerId(e.id),
+                        position: LatLng(e.latitude, e.longitude),
+                        icon: controller.angkotIcon.value,
+                      ),
+                    )
+                    .toSet()
+              },
+            ),
           ),
           TrackHeader(),
           TrackWrapper(),
+          Obx(
+            () => controller.focus.value != null
+                ? CardFleet(data: controller.focus.value!)
+                : Container(),
+          ),
         ],
       ),
     );

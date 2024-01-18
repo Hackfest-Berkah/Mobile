@@ -12,74 +12,76 @@ class TrackHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.topCenter,
-      child: AnimatedContainer(
-        duration: Duration(milliseconds: 40),
-        decoration: BoxDecoration(
-          color: Colors.white,
-        ),
-        height: 190.h,
-        clipBehavior: Clip.antiAlias,
-        child: SafeArea(
-          child: Wrap(
-            children: [
-              Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  SizedBox(height: 8.h),
-                  IntrinsicHeight(
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        SizedBox(width: 16.w),
-                        Align(
-                          alignment: Alignment.topCenter,
-                          child: Column(
-                            children: [
-                              SizedBox(height: 8.h),
-                              GestureDetector(
-                                onTap: () {
-                                  Get.back();
-                                },
-                                child: controller.backIcon.value,
-                              ),
-                            ],
+      child: Obx(
+        () => AnimatedContainer(
+          duration: Duration(milliseconds: 1000),
+          decoration: BoxDecoration(
+            color: Colors.white,
+          ),
+          height: controller.focus.value != null ? 0.h : 190.h,
+          clipBehavior: Clip.antiAlias,
+          child: SafeArea(
+            child: Wrap(
+              children: [
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SizedBox(height: 8.h),
+                    IntrinsicHeight(
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          SizedBox(width: 16.w),
+                          Align(
+                            alignment: Alignment.topCenter,
+                            child: Column(
+                              children: [
+                                SizedBox(height: 8.h),
+                                GestureDetector(
+                                  onTap: () {
+                                    Get.back();
+                                  },
+                                  child: controller.backIcon.value,
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                        SizedBox(width: 8.w),
-                        Flexible(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              AppInput(
-                                controller: controller.destination,
-                                placeholder: "Input Your Pickup",
-                              ),
-                              SizedBox(height: 12.h),
-                              AppInput(
-                                controller: TextEditingController(),
-                                placeholder: "Input Your Destination",
-                              ),
-                            ],
+                          SizedBox(width: 8.w),
+                          Flexible(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                AppInput(
+                                  controller: controller.destination,
+                                  placeholder: "Input Your Pickup",
+                                ),
+                                SizedBox(height: 12.h),
+                                AppInput(
+                                  controller: TextEditingController(),
+                                  placeholder: "Input Your Destination",
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                        SizedBox(width: 8.w),
-                        Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(Icons.swap_vert),
-                              SizedBox(height: 8.h),
-                            ],
+                          SizedBox(width: 8.w),
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(Icons.swap_vert),
+                                SizedBox(height: 8.h),
+                              ],
+                            ),
                           ),
-                        ),
-                        SizedBox(width: 16.w),
-                      ],
+                          SizedBox(width: 16.w),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
