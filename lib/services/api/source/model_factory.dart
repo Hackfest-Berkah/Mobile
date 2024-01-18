@@ -1,3 +1,4 @@
+import 'package:kiri/app/models/common/fleet/fleet_model.dart';
 import 'package:kiri/app/models/response/history/history_model.dart';
 import 'package:kiri/app/models/response/login/login_response.dart';
 import 'package:kiri/app/models/response/profile/profile_response.dart';
@@ -15,6 +16,8 @@ abstract class ModelFactory {
       return RegisterResponse.fromJson(json);
     } else if (strType == (HistoryResponse).toString()) {
       return HistoryResponse.fromJson(json);
+    } else if (strType == (FleetModel).toString()) {
+      return FleetModel.fromJson(json);
     }
 
     throw UnimplementedError();

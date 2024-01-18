@@ -1,0 +1,51 @@
+[
+  {
+    "id": "d1d9be6c-fa0d-425a-a224-e3986715bad3",
+    "type": "",
+    "plate": "N 5261 AD",
+    "route": "Arjosari - Lawang",
+    "scheduled": 8,
+    "current_capacity": 4,
+    "max_capacity": 32,
+    "latitude": -7.933044,
+    "longitude": 112.658025,
+    "UpdatedAt": "2024-01-18T03:38:14.313189Z"
+  },
+
+  {
+    "id": "d1d9be6c-fa0d-425a-a224-e3fs986715bads3",
+    "type": "",
+    "plate": "L 1092 WA",
+    "route": "Bungurasih - Arjosari",
+    "scheduled": 15,
+    "current_capacity": 20,
+    "max_capacity": 32,
+    "latitude": -7.918439,
+    "longitude": 112.65377,
+    "UpdatedAt": "2024-01-18T03:38:14.313189Z"
+  },
+  {
+    "id": "d1d9be6c-fa0d-425a-a224-e3986715bad3",
+    "type": "",
+    "plate": "N 6971 DE",
+    "route": "Landungsari - Merjosari",
+    "scheduled": 10,
+    "current_capacity": 15,
+    "max_capacity": 32,
+    "latitude": -7.924497,
+    "longitude": 112.598602,
+    "UpdatedAt": "2024-01-18T03:38:14.313189Z"
+  },
+  {
+    "id": "d1d9be6c-fa0d-425a-a224-e3986715sabad3",
+    "type": "",
+    "plate": "N 9912 EDA",
+    "route": "Landungsari - Arjosari",
+    "scheduled": 2,
+    "current_capacity": 1,
+    "max_capacity": 32,
+    "latitude": -7.898811,
+    "longitude": 112.601701,
+    "UpdatedAt": "2024-01-18T03:38:14.313189Z"
+  }
+]

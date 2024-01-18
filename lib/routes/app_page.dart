@@ -7,6 +7,7 @@ import 'package:kiri/app/bindings/onboard_bindings.dart';
 import 'package:kiri/app/bindings/profile_bindings.dart';
 import 'package:kiri/app/bindings/qr_bindings.dart';
 import 'package:kiri/app/bindings/topup_bindings.dart';
+import 'package:kiri/app/bindings/track_binding.dart';
 import 'package:kiri/app/presentation/view/edit_profile_page.dart';
 import 'package:kiri/app/presentation/view/history_page.dart';
 import 'package:kiri/app/presentation/view/home_page.dart';
@@ -20,6 +21,7 @@ import 'package:kiri/app/presentation/view/register_page.dart';
 import 'package:kiri/app/presentation/view/splash_page.dart';
 import 'package:kiri/app/presentation/view/topup_detail_page.dart';
 import 'package:kiri/app/presentation/view/topup_page.dart';
+import 'package:kiri/app/presentation/view/track_page.dart';
 import 'package:kiri/routes/app_route.dart';
 
 List<GetPage<dynamic>> appPage() {
@@ -96,6 +98,11 @@ List<GetPage<dynamic>> appPage() {
       page: () => TopupDetailPage(),
       binding: TopupBinding(),
       transition: Transition.rightToLeft,
+    ),
+    GetPage(
+      name: AppRoute.track,
+      page: () => TrackPage(),
+      binding: TrackBinding(),
     ),
   ];
 }

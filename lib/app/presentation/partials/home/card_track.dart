@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:kiri/app/controller/home_controller.dart';
+import 'package:kiri/routes/app_route.dart';
 import 'package:kiri/styles/color_constants.dart';
 import 'package:kiri/styles/text_styles.dart';
 
@@ -39,7 +40,7 @@ class CardTrack extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  // TOOD: REDIRECT View More
+                  Get.toNamed(AppRoute.track);
                 },
                 child: Text(
                   "View More",
@@ -148,6 +149,9 @@ class CardTrack extends StatelessWidget {
             width: 1.sw,
             height: 160.h,
             child: GoogleMap(
+              onTap: (e) {
+                Get.toNamed(AppRoute.track);
+              },
               myLocationEnabled: true,
               initialCameraPosition: initCoordinate,
               myLocationButtonEnabled: true,

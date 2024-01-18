@@ -30,4 +30,7 @@ class AppRoute {
   // Profile
   static String profile = "/profile";
   static String editProfile = "/profile/edit";
+
+  // Track
+  static String track = "/track";
 }
